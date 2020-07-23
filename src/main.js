@@ -10,7 +10,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 //import the hello component
-import Hello from './components/HelloWorld'
+import Home from './components/Home'
 
 //import the about component
 import About from './components/About'
@@ -21,7 +21,7 @@ const routes = [
 //route for the home route of the web page
   { name: "about", path: '/about', component: About },
 //route for the about route of the web page
-  { name: "home", path: '/', component: Hello },
+  { name: "home", path: '/', component: Home },
   { name: "projects", path: '/Portfolio', component: Portfolio},
 
 ];

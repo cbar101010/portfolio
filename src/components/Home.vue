@@ -88,7 +88,6 @@
         </v-row>
       </v-col>
     </v-row>
-    <router-link v-bind:to="'/about'"> <br>About</router-link>
     <router-view/>
   </v-container>
 

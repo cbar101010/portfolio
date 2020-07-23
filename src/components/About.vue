@@ -1,48 +1,46 @@
 <template>
-    <v-carousel
-            cycle
-            height="400"
-            hide-delimiter-background
-            show-arrows-on-hover
-            dark
-    >
-        <v-carousel-item
-                v-for="(slide, i) in slides"
-                :key="i"
-        >
-            <v-sheet
-                    :color="colors[i]"
-                    height="100%"
-            >
-                <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center"
-                >
-                    <div class="display-3">{{ slide }} Slide</div>
-                </v-row>
-            </v-sheet>
-        </v-carousel-item>
-    </v-carousel>
+    <div>
+        <v-card align="center">
+            <h1>Colby Barton</h1>
+            <h4>I like to rock climb, hike, swim, sail, and have a good time. I graduate from Utah Valley Universtiy Spring 2020 with a BS in Computer Science,
+                I currently work at DigiCert, Inc. I love to develop code, learn, and pride myself in my ability to solve problems. I am married and have two dogs.</h4>
+        </v-card>
+        <v-carousel height="850px">
+            <v-carousel-item
+                    v-for="(item,i) in items"
+                    :key="i"
+                    :src="fetchImage(item.src)"
+            ></v-carousel-item>
+        </v-carousel>
+    </div>
+
 </template>
 
 <script>
     export default {
+        methods: {
+            fetchImage: function(path){
+                return require( '../assets/selfie/' + path);
+            },
+        },
         data () {
             return {
-                colors: [
-                    'indigo',
-                    'warning',
-                    'pink darken-2',
-                    'red lighten-1',
-                    'deep-purple accent-4',
-                ],
-                slides: [
-                    'First',
-                    'Second',
-                    'Third',
-                    'Fourth',
-                    'Fifth',
+                items: [
+                    {
+                        src: 'wedding.jpg',
+                    },
+                    {
+                        src: 'fire.jpg',
+                    },
+                    {
+                        src: 'climb.jpg',
+                    },
+                    {
+                        src: 'family.jpg',
+                    },
+                    {
+                        src: 'water.jpg'
+                    }
                 ],
             }
         },
